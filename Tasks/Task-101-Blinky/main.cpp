@@ -27,14 +27,14 @@ int main()
  redLED = 1;
 
         // Wait 1 second (1 million microseconds)
-        wait_us(250000); 
+        wait_us(1000000); 
 
         // Turn LED OFF
         greenLED = 0;
         redLED = 0;
 
         // Wait 1 second
-        wait_us(250000);
+        wait_us(1000000);
 
         
 
@@ -42,13 +42,13 @@ int main()
         blueLED = 1; 
 
         // Wait 1 second (1 million microseconds)
-        wait_us(250000); 
+        wait_us(1000000); 
 
         // Turn LED OFF
         blueLED = 0;
 
         // Wait 1 second
-        wait_us(250000); 
+        wait_us(1000000); 
      
         printf("Hello\n\r");
      
