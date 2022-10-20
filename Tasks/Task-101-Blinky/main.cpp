@@ -20,11 +20,11 @@ int main()
 
     // ALL the repeating code is contained in a  “while loop”
     while(true) 
-    {{ 
+    {
         //The code between the { curly braces } is the code that is repeated forever
-
         // Turn onboard LED ON  
-        greenLED = 1; 
+ greenLED = 1; 
+ redled = 1
 
         // Wait 1 second (1 million microseconds)
         wait_us(250000); 
@@ -33,11 +33,12 @@ int main()
         greenLED = 0;
 
         // Wait 1 second
-        wait_us(250000); }
-{
+        wait_us(250000);
+
         
         // Turn onboard LED ON  
         redLED = 1; 
+        greenLED=1;
 
         // Wait 1 second (1 million microseconds)
         wait_us(250000); 
@@ -46,8 +47,8 @@ int main()
         redLED = 0;
 
         // Wait 1 second
-        wait_us(250000); }
-{
+        wait_us(250000); 
+
          // Turn onboard LED ON  
         blueLED = 1; 
 
@@ -60,7 +61,7 @@ int main()
         // Wait 1 second
         wait_us(250000); 
      
-     printf("Hello\n\r");
+        printf("Hello\n\r");
      
-      }  }
+    }
 }
