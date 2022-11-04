@@ -24,7 +24,7 @@ Buttons buttons;
 void siren(bool do_dot, DigitalOut* led){
     int delay=0;
     if(do_dot==true){
-        delay = DOT*1000;
+        delay = DOT*1000;  
     }
     else{
         delay = DASH*1000;
@@ -32,13 +32,15 @@ void siren(bool do_dot, DigitalOut* led){
         //On for 500ms
         *led = 1;
         buzz.playTone("C");
-        wait_us(delay);  //250ms
+        wait_us(delay); 
+          //250ms
 
     //Pause
            //Off for 500ms
         *led = 0;
         buzz.rest();
         wait_us(delay);
+        
 
 //         //Off for 500ms
 //       *led = 1;
@@ -80,7 +82,7 @@ void playScale(char* note, DigitalOut* led){
         wait_us(WAIT_TIME_MS * 1000);
 
 }
-
+ 
       
 
 int main()
@@ -90,7 +92,7 @@ int main()
     while (buttons.BlueButton == 0);
     
     //Repeat everything "forever" (until the power is removed or the chip is reset)
-    while(counter<2){
+    while(counter<1){
         playScale("C",&greenLED);
         playScale("D",&redLED);
         playScale("E",&amberLED);
