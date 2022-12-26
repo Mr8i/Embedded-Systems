@@ -21,136 +21,159 @@ Buttons buttons;
 //
 // Press the black reset button to restart the code (and stop the sound)
 // Otherwise, the noise can be "distracting" :)
-void siren(bool do_dot, DigitalOut* led){
-    int delay=0;
-    if(do_dot==true){
-        delay = DOT*1000;  
-    }
-    else{
-        delay = DASH*1000;
-    }
-        //On for 500ms
-        *led = 1;
+
+int main()
+{
+
+ //Wait for the BLUE button to be pressed (otherwise this becomes super annoying!)
+    while (buttons.BlueButton == 0);
+    
+    //Repeat everything "forever" (until the power is removed or the chip is reset)
+    while (true)
+    {
+        //On for 150ms dot
+        greenLED = 1;
         buzz.playTone("C");
-        wait_us(delay); 
-          //250ms
+        wait_us(WAIT_TIME_MS * 150);  //150ms
 
-    //Pause
-           //Off for 500ms
-        *led = 0;
+        //off for 150ms 
+        greenLED = 0;
         buzz.rest();
-        wait_us(delay);
+        wait_us(WAIT_TIME_MS * 150);
+
+         //On for 150ms dot
+        greenLED = 1;
+        buzz.playTone("C");
+        wait_us(WAIT_TIME_MS * 150);  //150ms
+
+        //off for 150ms 
+        greenLED = 0;
+        buzz.rest();
+        wait_us(WAIT_TIME_MS * 150);
+
+         //On for 150ms dot
+        greenLED = 1;
+        buzz.playTone("C");
+        wait_us(WAIT_TIME_MS * 150);  //150ms
+
+        //off for 150ms
+        greenLED = 0;
+        buzz.rest();
+        wait_us(WAIT_TIME_MS * 150);
+
+
+       //On for 450ms dash
+        greenLED = 1;
+        buzz.playTone("C");
+        wait_us(WAIT_TIME_MS * 450);  //150ms
+
+        //off for 150ms
+        greenLED = 0;
+        buzz.rest();
+        wait_us(WAIT_TIME_MS * 150);
+
+         //On for 450ms dash
+        greenLED = 1;
+        buzz.playTone("C");
+        wait_us(WAIT_TIME_MS * 450);  //150ms
+
+        //off for 150ms
+        greenLED = 0;
+        buzz.rest();
+        wait_us(WAIT_TIME_MS * 150);
+
+         //On for 450ms dash
+        greenLED = 1;
+        buzz.playTone("C");
+        wait_us(WAIT_TIME_MS * 450);  //150ms
+
+        //off for 150ms
+        greenLED = 0;
+        buzz.rest();
+        wait_us(WAIT_TIME_MS * 150);
+
+         //On for 150ms
+        greenLED = 1;
+        buzz.playTone("C");
+        wait_us(WAIT_TIME_MS * 150);  //150ms
+
+        //off for 150ms
+        greenLED = 0;
+        buzz.rest();
+        wait_us(WAIT_TIME_MS * 150);
+
+         //On for 150ms
+        greenLED = 1;
+        buzz.playTone("C");
+        wait_us(WAIT_TIME_MS * 150);  //150ms
+
+        //off for 150ms
+        greenLED = 0;
+        buzz.rest();
+        wait_us(WAIT_TIME_MS * 150);
+
+         //On for 150ms
+        greenLED = 1;
+        buzz.playTone("C");
+        wait_us(WAIT_TIME_MS * 150);  //150ms
+
+        //off for 150ms
+        greenLED = 0;
+        buzz.rest();
+        wait_us(WAIT_TIME_MS * 150);
+
+
+
         
-
-//         //Off for 500ms
-//       *led = 1;
-//         buzz.playTone("G");
-//         wait_us(DASH * 1000);  //250ms
-
-//         //Pause
-//         buzz.rest();
-//         wait_us(DASH * 1000);
-//   //On for 500ms
-//         *led = 1;
-//         buzz.playTone(dash);
-//         wait_us(WAIT_TIME_MS * 1000);  //250ms
-
-//         //Off for 500ms
-//         *led = 0;
-//         buzz.rest();
-//         wait_us(WAIT_TIME_MS * 1000);
-}
-
-
-// TIP: (I suggest you read this!)
-//
-// Press the black reset button to restart the code (and stop the sound)
-// Otherwise, the noise can be "distracting" :)
-void playScale(char* note, DigitalOut* led){
-        //On for 500ms
-        *led = 1;
-        buzz.playTone(note);
-        wait_us(WAIT_TIME_MS * 1000);  //250ms
-
-        //Off for 500ms
-        *led = 0;
-        buzz.playTone(note, Buzzer::HIGHER_OCTAVE);
-        wait_us(WAIT_TIME_MS * 1000);  //250ms
 
         //Pause
         buzz.rest();
         wait_us(WAIT_TIME_MS * 1000);
 
-}
- 
-      
-
-int main()
-{
-    //Wait for the BLUE button to be pressed (otherwise this becomes super annoying!)
-    int counter=0;
-    while (buttons.BlueButton == 0);
-    
-    //Repeat everything "forever" (until the power is removed or the chip is reset)
-    while(counter<1){
-        playScale("C",&greenLED);
-        playScale("D",&redLED);
-        playScale("E",&amberLED);
-        playScale("F",&greenLED);
-        playScale("G",&redLED);
-        playScale("A",&amberLED);
-        playScale("B",&greenLED);
-        playScale("C",&redLED);       // //On for 500ms
-        counter++;
     }
 
-
-    siren(dot,&redLED);
-    siren(dot,&redLED;
-    siren(dot,&redLED);
-    siren(dash,&amberLED);
-    siren(dash,&amberLED);
-    siren(dash,&amberLED);
-    siren(dot,&greenLED);
-    siren(dot,&greenLED);
-    siren(dot,&greenLED);
-
-
-
-    //        while(counter<3){
-    //     siren("dot",&greenLED);
-    //     siren("dot",&redLED);
-    //   siren("dot",&amberLED);
-    //     siren("dash",&greenLED);
-    //     playScale("G",&redLED);
-    //     playScale("A",&amberLED);
-    //     playScale("B",&greenLED);
-    //     playScale("C",&redLED);  
-    // }
-
+// {
+//     //Wait for the BLUE button to be pressed (otherwise this becomes super annoying!)
+//     int counter=0;
+//     while (buttons.BlueButton == 0);
     
+//     //Repeat everything "forever" (until the power is removed or the chip is reset)
+   
+   
+   
+//    while (true)
+//     {
+//         //On for 500ms
+//         greenLED = 1;
+//         buzz.playTone("C");
+//         wait_us(WAIT_TIME_MS * 250);  //500ms
 
-    
+//         buzz.playTone("D");
+//         wait_us(WAIT_TIME_MS * 250);
 
+//         buzz.playTone("E");
+//         wait_us(WAIT_TIME_MS * 250);
 
+//         buzz.playTone("F");
+//         wait_us(WAIT_TIME_MS * 250);
 
+//         buzz.playTone("A", Buzzer::HIGHER_OCTAVE);
+//         wait_us(WAIT_TIME_MS * 250);
 
+//         buzz.playTone("B", Buzzer::HIGHER_OCTAVE);
+//         wait_us(WAIT_TIME_MS * 250);
 
-        // greenLED = 1;
-        // buzz.playTone("C");
-        // wait_us(WAIT_TIME_MS * 1000);  //500ms
+//         //Off for 500ms
+//         greenLED = 0;
+//         buzz.playTone("C", Buzzer::HIGHER_OCTAVE);
+//         wait_us(WAIT_TIME_MS * 250);  //500ms
 
+//         //Pause
+//         buzz.rest();
+//         wait_us(WAIT_TIME_MS * 1000);
 
-        // //Off for 500ms
-        // greenLED = 0;
-        // buzz.playTone("C", Buzzer::HIGHER_OCTAVE);
-        // wait_us(WAIT_TIME_MS * 1000);  //500ms
-
-        // //Pause
-        //// buzz.rest();
-        // wait_us(WAIT_TIME_MS * 1000);
-
-    
+//     }
+ 
 
     
 }
