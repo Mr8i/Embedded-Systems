@@ -13,7 +13,8 @@ int main()
     printf("\nTASK-112\n");
 
     //getchar
-    char c1, c2;
+    char c1, c2, c3, c4;
+
     printf("\n\nPress a key\n");
     c1 = getchar();
     printf("You entered character %c which has the ASCII code %d\n", c1, c1);
@@ -21,6 +22,18 @@ int main()
     printf("\n\nPress another key\n");
     c2 = getchar();
     printf("You entered character %c which has the ASCII code %d\n", c2, c2);
+
+
+     printf("\n\nPress a key\n");
+
+    printf("\n\nPress a key\n");
+
+    c3 = getchar();
+    printf("You entered character %c which has the ASCII code %d\n", c3, c3);
+
+    printf("\n\nPress another key\n");
+    c4 = getchar();
+    printf("You entered character %c which has the ASCII code %d\n", c4, c4);
 
     //scanf
     printf("\n\nTo set the delay (in ms), type in an integer number and press return\n");
@@ -42,5 +55,5 @@ int main()
     } 
 
     printf("Invalid - please restart and try again\n");
-    while(1);    
+    while(1);     
 }
