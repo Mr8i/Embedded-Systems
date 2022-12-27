@@ -21,14 +21,15 @@ BusOut ledData(LED_D0_PIN, LED_D1_PIN, LED_D2_PIN, LED_D3_PIN, LED_D4_PIN, LED_D
 
 int main()
 {
+   
     printf("\nTASK-110\n");
 
     // Integer
-    int count = 0;
+    int count = 10;
     printf("count = %d\n", count);
 
     // Add one to count
-    count = count + 1;
+    count = count + 2;
     printf("New value of count = %d\n", count);
 
     // Char
@@ -36,11 +37,33 @@ int main()
     character = 'A';
     printf("The character %c has the ASCII code %d\n", character, character);
 
+   
+    character = 'a';
+    printf("The character %c has the ASCII code %d\n", character, character);
+
+   
+    character = 'Z';
+    printf("The character %c has the ASCII code %d\n", character, character);
+
+    character = 'z';
+    printf("The character %c has the ASCII code %d\n", character, character);
+
+
+    character = '0';
+    printf("The character %c has the ASCII code %d\n", character, character);
+
+    
+    character = '9';
+    printf("The character %c has the ASCII code %d\n", character, character);
+    
+
+
+
     // Short
-    short shortCount = 32766;
-    printf("The value of shortCount is %hd\n", shortCount);
-    shortCount = shortCount + 1;
-    printf("add 1 and shortCount is %hd\n", shortCount);
+    int shortCount = 32766;
+    printf("The value of shortCount is %d\n", shortCount);
+    shortCount = shortCount + 2;
+    printf("add 2 and shortCount is %d\n", shortCount);
 
     // Long long
     long long NN = 0x12345678ABCD0001LL; //Literal in HEX
@@ -55,11 +78,11 @@ int main()
 
     // float 
     float pi_float = 3.1415926536;
-    printf("The value of pi is approximately %f\n", pi_float);
+    printf("The value of pi is approximately %.20f\n", pi_float);
 
     // double
-    double pi_double = 3.1415926536l;
-    printf("The value of pi is approximately %lf\n", pi_double);
+    double pi_double = 3.141592653589793238461l;
+    printf("The value of pi is approximately %.20lf\n", pi_double);
 
     // Data type sizes (in bytes)
     printf("Size of a char is %d bytes\n", sizeof(char));
@@ -69,7 +92,8 @@ int main()
     printf("Size of a long long is %d bytes\n", sizeof(long long));
     printf("Size of a float is %d bytes\n", sizeof(float));
     printf("Size of a double is %d bytes\n", sizeof(double));
+    printf("I'm here please help me\n");
 
     // Stop
-    while (true);   
+    while (true);    
 }

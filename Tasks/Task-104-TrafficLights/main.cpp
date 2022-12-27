@@ -29,9 +29,30 @@ int main()
 
     while (true)
     {
-        red = !red;
-        amber = !amber;
-        green = !green;
-        wait_us(WAIT_TIME_MS * 1000);
+         red = 1;
+        wait_us(10000000);
+        amber = 1;
+        wait_us(2000000);
+        red = 0;
+        amber = 0;
+        green = 1;
+        wait_us(10000000);
+        green = 0;
+        amber = 1;
+        wait_us(250000);
+        amber = 0;
+        wait_us(250000);
+        amber = 1;
+        wait_us(250000);
+        amber = 0;
+        wait_us(250000);
+         amber = 1;
+        wait_us(250000);
+        amber = 0;
+        wait_us(250000);
+         amber = 1;
+        wait_us(250000);
+        amber = 0;
+        wait_us(250000);
     }
 }
